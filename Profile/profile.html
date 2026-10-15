@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile cá nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+        }
+
+        /* Khối card: căn giữa, có viền, bo góc */
+        .card {
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            border: 2px solid #4a90e2;
+            border-radius: 15px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        /* Avatar hình tròn */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #4a90e2;
+            object-fit: cover;
+        }
+
+        .ten {
+            font-size: 28px;
+            margin: 15px 0 5px 0;
+            color: #222;
+        }
+
+        .nghe {
+            color: #4a90e2;
+            font-weight: bold;
+            margin: 0 0 15px 0;
+        }
+
+        .gioithieu {
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .tieude-kynang {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #222;
+        }
+
+        /* Danh sách kỹ năng */
+        .kynang {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+
+        .kynang li {
+            display: inline-block;
+            background-color: #dbe9fb;
+            padding: 6px 14px;
+            margin: 4px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* Nút liên hệ */
+        .btn {
+            display: inline-block;
+            padding: 10px 28px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #e2574c;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img class="avatar" alt="Avatar"
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Crect width='120' height='120' fill='%234a90e2'/%3E%3Ccircle cx='60' cy='46' r='22' fill='white'/%3E%3Cellipse cx='60' cy='105' rx='36' ry='28' fill='white'/%3E%3C/svg%3E">
+
+        <h1 class="ten">Nguyễn Văn A</h1>
+        <p class="nghe">Lập trình viên Web</p>
+
+        <p class="gioithieu">
+            Xin chào, mình là sinh viên ngành Công nghệ thông tin.
+            Mình yêu thích thiết kế website và luôn muốn học hỏi thêm công nghệ mới.
+            Rất vui được làm quen với bạn!
+        </p>
+
+        <h2 class="tieude-kynang">Kỹ năng</h2>
+        <ul class="kynang">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Làm việc nhóm</li>
+        </ul>
+
+        <a class="btn" href="#">Liên hệ</a>
+    </div>
+</body>
+</html>
