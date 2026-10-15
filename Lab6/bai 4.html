@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính tình yêu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 180px;
+            margin: 5px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #c00;
+        }
+        #thongbao {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Máy tính tình yêu</h2>
+
+    <div>
+        <label for="ten1">Tên của bạn:</label>
+        <input type="text" id="ten1" placeholder="Nhập tên của bạn">
+    </div>
+    <div>
+        <label for="ten2">Tên người ấy:</label>
+        <input type="text" id="ten2" placeholder="Nhập tên người ấy">
+    </div>
+    <button onclick="tinhTinhYeu()">Tính tỷ lệ phù hợp</button>
+
+    <p id="ketqua"></p>
+    <p id="thongbao"></p>
+
+    <script>
+        function tinhTinhYeu() {
+            var ten1 = document.getElementById("ten1").value.trim();
+            var ten2 = document.getElementById("ten2").value.trim();
+            var ketQua = document.getElementById("ketqua");
+            var thongBao = document.getElementById("thongbao");
+
+            if (ten1 === "" || ten2 === "") {
+                ketQua.innerHTML = "Vui lòng nhập đủ hai tên!";
+                thongBao.innerHTML = "";
+                return;
+            }
+
+            // Sinh ngẫu nhiên số từ 1 đến 100
+            var tyLe = Math.floor(Math.random() * 100) + 1;
+            var loiNhan;
+
+            if (tyLe >= 90) {
+                loiNhan = "Trời sinh một cặp! Cưới ngay thôi!";
+            } else if (tyLe >= 70) {
+                loiNhan = "Rất hợp nhau, hãy trân trọng nhau nhé!";
+            } else if (tyLe >= 50) {
+                loiNhan = "Khá hợp, cần thêm sự thấu hiểu và cố gắng.";
+            } else if (tyLe >= 30) {
+                loiNhan = "Hơi khó khăn, cần nhiều nỗ lực từ cả hai.";
+            } else {
+                loiNhan = "Có vẻ không hợp lắm, nhưng tình yêu cần nhiều hơn con số!";
+            }
+
+            ketQua.innerHTML = ten1 + " ❤ " + ten2 + ": " + tyLe + "%";
+            thongBao.innerHTML = loiNhan;
+        }
+    </script>
+</body>
+</html>

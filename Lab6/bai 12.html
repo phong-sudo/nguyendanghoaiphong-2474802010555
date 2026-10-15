@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra năm nhuận</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 150px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kiểm tra năm nhuận</h2>
+
+    <label for="nam">Nhập một năm:</label>
+    <input type="number" id="nam" placeholder="Ví dụ: 2024">
+    <button onclick="kiemTra()">Kiểm tra</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            var nam = parseInt(document.getElementById("nam").value);
+            var ketQua = document.getElementById("ketqua");
+
+            if (isNaN(nam) || nam <= 0) {
+                ketQua.innerHTML = "Vui lòng nhập một năm hợp lệ!";
+                return;
+            }
+
+            // Năm nhuận: chia hết cho 400, hoặc chia hết cho 4 nhưng không chia hết cho 100
+            if ((nam % 4 === 0 && nam % 100 !== 0) || nam % 400 === 0) {
+                ketQua.innerHTML = "Năm " + nam + " là năm nhuận.";
+            } else {
+                ketQua.innerHTML = "Năm " + nam + " không phải năm nhuận.";
+            }
+        }
+    </script>
+</body>
+</html>

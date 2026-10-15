@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự đoán nghề nghiệp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 200px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dự đoán nghề nghiệp</h2>
+
+    <label for="ten">Nhập tên của bạn:</label>
+    <input type="text" id="ten" placeholder="Ví dụ: Nguyễn Văn A">
+    <button onclick="duDoan()">Dự đoán</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function duDoan() {
+            var ten = document.getElementById("ten").value.trim();
+            var ketQua = document.getElementById("ketqua");
+
+            if (ten === "") {
+                ketQua.innerHTML = "Vui lòng nhập tên!";
+                return;
+            }
+
+            var danhSach = [
+                "Lập trình viên",
+                "Bác sĩ",
+                "Giáo viên",
+                "Kỹ sư",
+                "Ca sĩ",
+                "Họa sĩ",
+                "Nhà báo",
+                "Doanh nhân"
+            ];
+
+            // Chọn ngẫu nhiên một nghề nghiệp từ danh sách
+            var nghe = danhSach[Math.floor(Math.random() * danhSach.length)];
+
+            ketQua.innerHTML = ten + " sau này sẽ là: " + nghe;
+        }
+    </script>
+</body>
+</html>

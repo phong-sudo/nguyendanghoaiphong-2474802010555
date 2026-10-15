@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài 7 - Xúc xắc may mắn</title>
+</head>
+<body>
+  <h1>Bài 7. Xúc xắc may mắn</h1>
+
+  <button onclick="lacXucXac()">Lắc xúc xắc</button>
+
+  <p id="ketQua"></p>
+
+  <script>
+    function lacXucXac() {
+      // Sinh số nguyên ngẫu nhiên từ 1 đến 6
+      var soXucXac = Math.floor(Math.random() * 6) + 1;
+
+      document.getElementById("ketQua").innerText =
+        "Kết quả lắc xúc xắc: " + soXucXac;
+    }
+  </script>
+</body>
+</html>

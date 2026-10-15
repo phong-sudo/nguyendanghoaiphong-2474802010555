@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quay thưởng may mắn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        button {
+            padding: 10px 24px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quay thưởng may mắn</h2>
+
+    <button onclick="quayThuong()">Quay thưởng</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function quayThuong() {
+            var phanQua = [
+                "Giải nhất: 1.000.000đ",
+                "Giải nhì: 500.000đ",
+                "Giải ba: 200.000đ",
+                "Một chiếc áo thun",
+                "Một cuốn sổ tay",
+                "Một ly nước",
+                "Chúc bạn may mắn lần sau"
+            ];
+
+            // Chọn ngẫu nhiên một phần quà
+            var qua = phanQua[Math.floor(Math.random() * phanQua.length)];
+
+            document.getElementById("ketqua").innerHTML = "Bạn nhận được: " + qua;
+        }
+    </script>
+</body>
+</html>

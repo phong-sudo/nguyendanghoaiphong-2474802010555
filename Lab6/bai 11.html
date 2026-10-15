@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra mật khẩu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 200px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kiểm tra mật khẩu</h2>
+
+    <label for="matkhau">Nhập mật khẩu:</label>
+    <input type="password" id="matkhau">
+    <button onclick="kiemTra()">Kiểm tra</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function kiemTra() {
+            var matKhau = document.getElementById("matkhau").value;
+            var ketQua = document.getElementById("ketqua");
+
+            if (matKhau.length >= 8) {
+                ketQua.innerHTML = "Mật khẩu hợp lệ.";
+                ketQua.style.color = "green";
+            } else {
+                ketQua.innerHTML = "Mật khẩu quá ngắn.";
+                ketQua.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

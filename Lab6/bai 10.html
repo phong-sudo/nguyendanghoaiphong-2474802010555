@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính đơn giản</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 120px;
+            margin: 5px;
+        }
+        button {
+            padding: 8px 18px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Máy tính đơn giản</h2>
+
+    <div>
+        <label for="so1">Số thứ nhất:</label>
+        <input type="number" id="so1">
+    </div>
+    <div>
+        <label for="so2">Số thứ hai:</label>
+        <input type="number" id="so2">
+    </div>
+
+    <div>
+        <button onclick="tinh('+')">Cộng</button>
+        <button onclick="tinh('-')">Trừ</button>
+        <button onclick="tinh('*')">Nhân</button>
+        <button onclick="tinh('/')">Chia</button>
+    </div>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function tinh(phepTinh) {
+            var a = parseFloat(document.getElementById("so1").value);
+            var b = parseFloat(document.getElementById("so2").value);
+            var ketQua = document.getElementById("ketqua");
+
+            if (isNaN(a) || isNaN(b)) {
+                ketQua.innerHTML = "Vui lòng nhập đủ hai số!";
+                return;
+            }
+
+            var kq;
+            if (phepTinh === "+") {
+                kq = a + b;
+            } else if (phepTinh === "-") {
+                kq = a - b;
+            } else if (phepTinh === "*") {
+                kq = a * b;
+            } else {
+                if (b === 0) {
+                    ketQua.innerHTML = "Không thể chia cho 0!";
+                    return;
+                }
+                kq = a / b;
+            }
+
+            ketQua.innerHTML = "Kết quả: " + kq;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tuổi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 150px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tính tuổi</h2>
+
+    <label for="namsinh">Nhập năm sinh:</label>
+    <input type="number" id="namsinh" placeholder="Ví dụ: 2000">
+    <button onclick="tinhTuoi()">Tính tuổi</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function tinhTuoi() {
+            var namSinh = parseInt(document.getElementById("namsinh").value);
+            var namHienTai = new Date().getFullYear();
+            var ketQua = document.getElementById("ketqua");
+
+            if (isNaN(namSinh)) {
+                ketQua.innerHTML = "Vui lòng nhập năm sinh!";
+            } else if (namSinh < 1900 || namSinh > namHienTai) {
+                ketQua.innerHTML = "Năm sinh không hợp lệ!";
+            } else {
+                var tuoi = namHienTai - namSinh;
+                ketQua.innerHTML = "Tuổi của bạn là: " + tuoi;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi nhiệt độ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 150px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        #ketqua {
+            margin-top: 25px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chuyển đổi nhiệt độ</h2>
+
+    <label for="doC">Nhập nhiệt độ (°C):</label>
+    <input type="number" id="doC" step="any" placeholder="Ví dụ: 30">
+    <button onclick="chuyenDoi()">Chuyển đổi</button>
+
+    <p id="ketqua"></p>
+
+    <script>
+        function chuyenDoi() {
+            var c = parseFloat(document.getElementById("doC").value);
+            var ketQua = document.getElementById("ketqua");
+
+            if (isNaN(c)) {
+                ketQua.innerHTML = "Vui lòng nhập nhiệt độ!";
+                return;
+            }
+
+            // Công thức: F = (9/5) × C + 32
+            var f = (9 / 5) * c + 32;
+
+            ketQua.innerHTML = c + " °C = " + f.toFixed(2) + " °F";
+        }
+    </script>
+</body>
+</html>

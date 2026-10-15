@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xen bói tình yêu</title>
+</head>
+<body>
+    <h2>XEM BÓI TÌNH YÊU</h2>
+    <label>Nhập tên bạn: </label>
+    <input type="text" id="tenban"><br><br>
+    <label>Nhập tên người ấy: </label>
+    <input type="text" id="tennguoiay"><br><br>
+    <button onclick="xemBoi()">Xem kết quả</button>
+    <h3 id="ketqua"></h3>
+
+    <script>
+        function xemBoi() {
+            let tenBan = document.getElementById("tenban").value;
+            let tenNguoiAy = document.getElementById("tennguoiay").value;
+            let diem = Math.floor(Math.random() * 100) + 1;
+            if (diem > 50) {
+                document.getElementById("ketqua").innerHTML = tenBan + " và " + tenNguoiAy + ". Điểm: " + diem + ". Chúc mừng hai bạn rất hợp.";
+                tenBan + "❤" + tenNguoiAy + ".Diem" + diem +".Chuc mung. Hai ban rat hop";
+            } else {
+                document.getElementById("ketqua").innerHTML = tenBan + " và " + tenNguoiAy + ". Điểm: " + diem + ". Hãy chia tay càng sớm càng tốt, là sau này tránh khổ cực.";
+                tenBan + "❤" + tenNguoiAy + ".Diem" + diem +".Chia tay som bot dau kho";
+            }
+        }
+    </script>
+</body>
+</html>

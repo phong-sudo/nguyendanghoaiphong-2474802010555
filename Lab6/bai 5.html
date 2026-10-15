@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đoán số may mắn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        input {
+            padding: 6px;
+            width: 150px;
+        }
+        button {
+            padding: 6px 14px;
+            cursor: pointer;
+        }
+        #somay {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #ketqua {
+            margin-top: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Đoán số may mắn</h2>
+
+    <label for="so">Nhập một số từ 1 đến 10:</label>
+    <input type="number" id="so" min="1" max="10" placeholder="Ví dụ: 7">
+    <button onclick="doanSo()">Đoán</button>
+
+    <p id="somay"></p>
+    <p id="ketqua"></p>
+
+    <script>
+        function doanSo() {
+            var soNhap = parseInt(document.getElementById("so").value);
+            var soMay = document.getElementById("somay");
+            var ketQua = document.getElementById("ketqua");
+
+            if (isNaN(soNhap) || soNhap < 1 || soNhap > 10) {
+                soMay.innerHTML = "";
+                ketQua.innerHTML = "Vui lòng nhập số từ 1 đến 10!";
+                return;
+            }
+
+            // Máy sinh ngẫu nhiên số từ 1 đến 10
+            var soMayTinh = Math.floor(Math.random() * 10) + 1;
+
+            soMay.innerHTML = "Số của bạn: " + soNhap + " | Số của máy: " + soMayTinh;
+
+            if (soNhap === soMayTinh) {
+                ketQua.innerHTML = "Chúc mừng! Bạn đã THẮNG!";
+            } else {
+                ketQua.innerHTML = "Chưa may mắn, thử lại nhé!";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi Oản tù tì</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        button {
+            padding: 10px 24px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #lua_chon {
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        #ketqua {
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #c00;
+        }
+    </style>
+</head>
+<body>
+    <h2>Trò chơi Oản tù tì</h2>
+
+    <p>Hãy chọn một:</p>
+    <button onclick="choi('Đá')">Đá</button>
+    <button onclick="choi('Giấy')">Giấy</button>
+    <button onclick="choi('Kéo')">Kéo</button>
+
+    <p id="lua_chon"></p>
+    <p id="ketqua"></p>
+
+    <script>
+        function choi(nguoiChoi) {
+            var luaChon = ["Đá", "Giấy", "Kéo"];
+
+            // Máy chọn ngẫu nhiên
+            var may = luaChon[Math.floor(Math.random() * 3)];
+            var ketQua;
+
+            if (nguoiChoi === may) {
+                ketQua = "HÒA!";
+            } else if (
+                (nguoiChoi === "Đá" && may === "Kéo") ||
+                (nguoiChoi === "Giấy" && may === "Đá") ||
+                (nguoiChoi === "Kéo" && may === "Giấy")
+            ) {
+                ketQua = "BẠN THẮNG!";
+            } else {
+                ketQua = "BẠN THUA!";
+            }
+
+            document.getElementById("lua_chon").innerHTML =
+                "Bạn chọn: " + nguoiChoi + " | Máy chọn: " + may;
+            document.getElementById("ketqua").innerHTML = ketQua;
+        }
+    </script>
+</body>
+</html>
