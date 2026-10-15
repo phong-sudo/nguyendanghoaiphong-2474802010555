@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đăng ký</title>
+<style>
+  table { border: 1px solid #000; font-size: 22px; padding: 10px; }
+  td { padding: 4px 8px; }
+  input[type=text], input[type=password], input[type=email], select {
+    width: 280px; padding: 8px; font-size: 18px; border: 1px solid #888; border-radius: 6px;
+  }
+  button { font-size: 18px; padding: 6px 14px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<form>
+  <table>
+    <tr><td>Enter name:</td><td><input type="text" name="name"></td></tr>
+    <tr><td>Enter password:</td><td><input type="password" name="password"></td></tr>
+    <tr><td>Enter Email:</td><td><input type="email" name="email"></td></tr>
+    <tr>
+      <td>Enter Gender:</td>
+      <td>
+        <input type="radio" name="gender" value="male" id="m"><label for="m"> male</label>
+        <input type="radio" name="gender" value="female" id="f"><label for="f"> female</label>
+      </td>
+    </tr>
+    <tr>
+      <td>Select Country:</td>
+      <td>
+        <select name="country">
+          <option>india</option>
+          <option>vietnam</option>
+          <option>japan</option>
+          <option>france</option>
+          <option>canada</option>
+        </select>
+      </td>
+    </tr>
+    <tr><td></td><td align="right"><button type="submit">register</button></td></tr>
+  </table>
+</form>
+</body>
+</html>
